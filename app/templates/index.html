@@ -52,6 +52,8 @@
     </div>
   </nav>
 
+
+
   <!-- Masthead -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
@@ -234,6 +236,14 @@
           <form name="sentMessage" id="contactForm" action="" method="post">
             {{ wtf.quick_form(form) }}
           </form>
+          <br>
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-info" role="alert">{{ message }}</div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
         </div>
       </div>
 
