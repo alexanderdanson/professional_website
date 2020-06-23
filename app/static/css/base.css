@@ -9714,6 +9714,12 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 1.25rem;
 }
 
+.masthead .masthead-subheading2 {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
 .masthead .masthead-avatar {
   width: 15rem;
 }
