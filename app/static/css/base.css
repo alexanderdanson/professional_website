@@ -9721,6 +9721,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .masthead .masthead-avatar {
+  border-radius: 3vmax;
+  border-style: solid;
   width: 15rem;
 }
 
