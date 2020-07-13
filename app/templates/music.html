@@ -1,486 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  {% extends "bootstrap/base.html" %}
-  {% import "bootstrap/wtf.html" as wtf %}
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+{% extends "bootstrap/base.html" %}
 
-  <title>Alex Danson - Guitarist and Musician</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Music template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Custom fonts for this theme -->
-  {% block styles %}
-  {{ super() }}
-  <link href="static/css/fonts/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<title>Alex Danson Music</title>
 
-  <!-- Theme CSS -->
-  <link href="static/css/music_base.css" rel="stylesheet">
-  {% endblock %}
+{% block styles %}
+{{ super() }}
 
+<link href="static/css/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="static/js/plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="static/js/plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="static/js/plugins/OwlCarousel2-2.3.4/animate.css">
+<link rel="stylesheet" type="text/css" href="static/css/music/main_styles.css">
+<link rel="stylesheet" type="text/css" href="static/css/music/responsive.css">
+
+{% endblock %}
 </head>
 
 {% block content %}
-<body id="page-top">
+<body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Alex Danson Music</a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<div class="super_container">
+	
+	<!-- Header -->
 
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-center">
 
+						<!-- Logo -->
+						<div class="logo">
+							<a href="#" class="d-flex flex-row align-items-end justify-content-start">
+								<span class="logo_bars d-flex flex-row align-items-end justify-content-between"><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="logo_text">music</span>
+							</a>
+						</div>
 
-  <!-- Masthead -->
-  <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
+						<!-- Main Navigation -->
+						<nav class="main_nav">
+							<ul class="d-flex flex-row align-items-center justify-content-start">
+								<li class="active"><a href="index.html">Home</a></li>
+								<li><a href="artists.html">Artists</a></li>
+								<li><a href="#">Download Music</a></li>
+								<li><a href="blog.html">News</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
 
-      <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="static/img/avataaars.svg" alt="">
+						<!-- User area -->
+						<div class="log_reg d-flex flex-row align-items-center justify-content-start">
+							<ul class="d-flex flex-row align-items-start justify-content-start">
+								<li><a href="#">Login</a></li>
+								<li><a href="#">Register</a></li>
+							</ul>
 
-      <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">Alex Danson</h1>
+							<!-- Hamburger -->
+							<div class="hamburger d-flex flex-column align-items-end justify-content-between"><div></div><div></div><div></div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 
-      <!-- Icon Divider -->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
+	<!-- Menu -->
 
-      <!-- Masthead Subheading -->
-      <p class="masthead-subheading font-weight-light mb-0">Guitarist and Musician</p>
-      <p class="masthead-subheading2 font-weight-light mb-0">Available for recordings, and gigs in the Stockholm area</p>
+	<div class="menu">
+		<div class="menu_container">
+			<div class="menu_background"></div>
+			<div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+			<div class="menu_content d-flex flex-column align-items-center justify-content-start">
+				<nav class="menu_nav">
+					<ul class="d-flex flex-column align-items-center justify-content-start">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="artists.html">Artists</a></li>
+						<li><a href="#">Download Music</a></li>
+						<li><a href="blog.html">News</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
 
-    </div>
-  </header>
+	<!-- Home -->
 
-  <!-- Portfolio Section -->
-  <section class="page-section portfolio" id="portfolio">
-    <div class="container">
+	<div class="home">
+		
+		<!-- Home Slider -->
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+				
+				<!-- Slide -->
+				<div class="slide">
+					<div class="background_image" style="background-image:url(static/img/music/index.jpg)"></div>
+					<div class="home_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_content">
+										<div class="home_title_container text-center">
+											<div class="home_title islive text-center"><h1>your <span>music.</span></h1></div>
+										</div>
+										<div class="tickets_form_container">
+											<form action="#" class="tickets_form">
+												<div class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">
+													<div class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">
+														<div class="custom_dropdown tickets_form_input cdd">
+															<div class="custom_dropdown_selected cdd">Event</div>
+															<ul class="cdd">
+																<li>Event 1</li>
+																<li>Event 2</li>
+																<li>Event 3</li>
+															</ul>
+														</div>
+														<input type="text" class="tickets_form_input" placeholder="Tickets" required="required">
+													</div>
+													<button class="tickets_form_button button"><span>get your tickets</span></button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-      <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Current Ventures</h2>
+				<!-- Slide -->
+				<div class="slide">
+					<div class="background_image" style="background-image:url(static/img/music/index.jpg)"></div>
+					<div class="home_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_content">
+										<div class="home_title_container text-center">
+											<div class="home_title islive text-center"><h1>your <span>music.</span></h1></div>
+										</div>
+										<div class="tickets_form_container">
+											<form action="#" class="tickets_form">
+												<div class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">
+													<div class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">
+														<div class="custom_dropdown tickets_form_input cdd">
+															<div class="custom_dropdown_selected cdd">Event</div>
+															<ul class="cdd">
+																<li>Event 1</li>
+																<li>Event 2</li>
+																<li>Event 3</li>
+															</ul>
+														</div>
+														<input type="text" class="tickets_form_input" placeholder="Tickets" required="required">
+													</div>
+													<button class="tickets_form_button button"><span>get your tickets</span></button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
+				<!-- Slide -->
+				<div class="slide">
+					<div class="background_image" style="background-image:url(static/img/music/index.jpg)"></div>
+					<div class="home_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_content">
+										<div class="home_title_container text-center">
+											<div class="home_title islive text-center"><h1>your <span>music.</span></h1></div>
+										</div>
+										<div class="tickets_form_container">
+											<form action="#" class="tickets_form">
+												<div class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">
+													<div class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">
+														<div class="custom_dropdown tickets_form_input cdd">
+															<div class="custom_dropdown_selected cdd">Event</div>
+															<ul class="cdd">
+																<li>Event 1</li>
+																<li>Event 2</li>
+																<li>Event 3</li>
+															</ul>
+														</div>
+														<input type="text" class="tickets_form_input" placeholder="Tickets" required="required">
+													</div>
+													<button class="tickets_form_button button"><span>get your tickets</span></button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-      <!-- Portfolio Grid Items -->
-      <div class="row">
+			</div>
 
-        <!-- Portfolio Item 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="static/img/portfolio/cabin.png" alt="">
-          </div>
-        </div>
+			<!-- Home Slider Navigation -->
+			<div class="home_slider_nav"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
 
-        <!-- Portfolio Item 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="static/img/portfolio/game.png" alt="">
-          </div>
-        </div>
+			<!-- Home Social -->
+			<div class="home_social">
+				<div class="d-flex flex-row align-items-center justify-content-start">
+					<div class="home_social_text">follow</div>
+					<div class="home_social_list">
+						<ul class="d-flex flex-row align-items-center justify-content-start">
+							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-        <!-- Portfolio Item 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="static/img/portfolio/submarine.png" alt="">
-          </div>
-        </div>
+			<!-- Scroll Down -->
+			<div class="scroll_down scroll_down_link" data-scroll-to=".tours">
+				<a href="#"></a>
+				<div class="d-flex flex-row align-items-center justify-content-start">
+					<div>scroll down</div>
+					<div class="scroll_arrows d-flex flex-column align-items-start justify-content-start">
+						<img src="static/img/music/arrow_down.png" alt="">
+						<img src="static/img/music/arrow_down.png" alt="">
+					</div>
+				</div>
+			</div>
 
-        <!-- Portfolio Item 4 
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="static/img/portfolio/game.png" alt="">
-          </div>
-        </div> -->
+		</div>
+	</div>
 
-        <!-- Portfolio Item 5 
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="static/img/portfolio/safe.png" alt="">
-          </div>
-        </div> -->
+	<!-- Song -->
 
-        <!-- Portfolio Item 6 
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="static/img/portfolio/submarine.png" alt="">
-          </div>
-        </div> -->
+	<div class="song">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="static/img/music/song.jpg" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="song_content">
 
-      </div>
-      <!-- /.row -->
+						<!-- Player -->
+						<div class="single_player_container">
+							<div class="single_player d-flex flex-row align-items-center justify-content-start">
+								<div id="jplayer_1" class="jp-jplayer"></div>
+								<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+									<div class="jp-gui jp-interface d-flex flex-lg-row flex-column align-items-start justify-content-start">
 
-    </div>
-  </section>
+										<!-- Player Controls -->
+										<div class="player_controls_box d-flex flex-row align-items-start justify-content-start">
+											<div class="order-lg-1 order-2">
+												<div class="player_title">song of the week</div>
+												<div class="jp-controls-holder player_controls ml-auto d-flex flex-row align-items-start justify-content-start">
+													<button class="jp-play player_button" tabindex="0"></button>
+													<button class="jp-stop player_button" tabindex="0"></button>
+												</div>
+											</div>
+											<div class="song_image ml-lg-auto order-lg-2 order-1"><img src="static/img/music/song_1.jpg" alt=""></div>
+										</div>
 
-  <!-- About Section -->
-  <section class="page-section bg-primary text-white mb-0" id="about">
-    <div class="container">
+										<!-- Progress Bar -->
+										<div class="player_bars d-flex flex-row align-items-start justify-content-start">
+											<div class="player_progress_box">
+												<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
+												<div class="song_info">
+													<div class="jp-artist" aria-label="title">Michael Smith</div>
+													<div class="jp-title" aria-label="title"></div>
+												</div>
+												<div class="jp-progress">
+													<div class="jp-seek-bar">
+														<div>
+															<div class="jp-play-bar"><span></span></div>
+														</div>
+													</div>
+												</div>
+												<div class="jp-duration ml-auto" role="timer" aria-label="duration">02:33</div>
+											</div>
 
-      <!-- About Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+											<!-- Volume Controls -->
+											<div class="jp-volume-controls ml-lg-auto">
+												<div class="mute_button">
+													<button class="jp-mute" tabindex="0"></button>
+												</div>
+												<div class="d-flex flex-row align-items-center justify-content-start">
+													<div class="jp-volume-bar">
+														<div>
+															<div class="jp-volume-bar-value"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+									<div class="jp-no-solution">
+										<span>Update Required</span>
+										To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
+									</div>
+								</div>
+							</div>
+						</div>
 
-      <!-- Icon Divider -->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-      <!-- About Section Content -->
-      <div class="row">
-        <div class="col-lg-4 ml-auto">
-          <p class="lead">
-            Hello! I'm a consultant based in Stockholm with a passion for learning about and applying new and emerging technology. My role consists of helping clients to create better products and services for customers more rapidly with the help of this technology.</p>
-        </div>
-        <div class="col-lg-4 mr-auto">
-          <p class="lead">I takes roles such as scrum master, product owner or project manager with experience in digital commerce, banking and Fintech. Besides this, I enjoy programming with Python, Flask and Flutter, cross-country skiing, running and making music with my guitar.</p>
-        </div>
-      </div>
+	<!-- Tours -->
 
-      <!-- About Section Button -->
-      <!-- <div class="text-center mt-4">
-          <a class="btn btn-xl btn-outline-light" href="" download>
-          <i class="fas fa-download mr-2"></i>
-          Download CV (English)
-          </a>
-          <br><br>
-          <a class="btn btn-xl btn-outline-light" href="" download>
-          <i class="fas fa-download mr-2"></i>
-          Ladda ner CV (Svenska)
-          </a>
-      </div> -->
+	<div class="tours">
+		<div class="container">
+			<div class="row row-lg-eq-height">
+				
+				<!-- Add -->
+				<div class="col-lg-4 order-lg-1 order-2 tours_col">
+					<div class="extra d-flex flex-column align-items-center justify-content-between">
+						<div class="background_image" style="background-image:url(static/img/music/extra_1.jpg)"></div>
+						<div class="extra_frame"></div>
+						<div class="extra_text">it's awesome</div>
+						<div class="extra_title_container">
+							<div class="extra_year">2019</div>
+							<div class="extra_title">world tour</div>
+							<div class="extra_subtitle">november 2018</div>
+						</div>
+						<div class="button extra_button"><a href="#">get your tickets</a></div>
+					</div>
+				</div>
 
-      </div>
+				<!-- Tours Content -->
+				<div class="col-lg-8 order-lg-2 order-1">
+					<div class="tours_content">
+						<div class="section_title"><h1>Tour Dates</h1></div>
+						<div class="tours_list_container">
+							<ul class="tours_list">
 
-    </div>
-  </section>
+								<!-- Tour -->
+								<li class="d-flex flex-row align-items-start justify-content-start">
+									<div class="tour_info">
+										<div class="tour_date">Sun, 21 Oct 2018</div>
+										<div class="tour_name"><a href="#">The O2</a></div>
+										<div class="tour_location">London, United Kingdom</div>
+									</div>
+									<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
+								</li>
 
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
+								<!-- Tour -->
+								<li class="d-flex flex-row align-items-start justify-content-start">
+									<div class="tour_info">
+										<div class="tour_date">Mon, 22 Oct 2018</div>
+										<div class="tour_name"><a href="#">The O2</a></div>
+										<div class="tour_location">London, United Kingdom</div>
+									</div>
+									<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
+								</li>
 
-      <!-- Contact Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+								<!-- Tour -->
+								<li class="d-flex flex-row align-items-start justify-content-start">
+									<div class="tour_info">
+										<div class="tour_date">Tue, 23 Oct 2018</div>
+										<div class="tour_name"><a href="#">The O2</a></div>
+										<div class="tour_location">London, United Kingdom</div>
+									</div>
+									<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
+								</li>
 
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
+								<!-- Tour -->
+								<li class="d-flex flex-row align-items-start justify-content-start">
+									<div class="tour_info">
+										<div class="tour_date">Wed, 24 Oct 2018</div>
+										<div class="tour_name"><a href="#">The O2</a></div>
+										<div class="tour_location">London, United Kingdom</div>
+									</div>
+									<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
+								</li>
 
-      <!-- Contact Section Form -->
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <form name="sentMessage" id="contactForm" action="" method="post">
-            {{ wtf.quick_form(form) }}
-          </form>
-          <br>
-          {% with messages = get_flashed_messages() %}
-            {% if messages %}
-              {% for message in messages %}
-                <div class="alert alert-info" role="alert">{{ message }}</div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
-        </div>
-      </div>
+							</ul>
+						</div>
+						<div class="tours_link"><a href="#">See All Tour Dates</a></div>
+					</div>
+				</div>
 
-    </div>
-  </section>
+			</div>
+		</div>
+	</div>
 
-  <!-- Footer -->
-  <footer class="footer text-center">
-    <div class="container">
-      <div class="row">
+	<!-- App -->
 
-        <!-- Footer Location -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h4 class="text-uppercase mb-4">Location</h4>
-          <p class="lead mb-0">Stockholm, Sweden</p>
-        </div>
+	<div class="app">
+		<div class="container">
+			<div class="row row-lg-eq-height">
+				
+				<!-- App Image -->
+				<div class="col-lg-6 order-lg-1 order-2 app_col">
+					<div class="app_image">
+						<img src="images/app.jpg" alt="">
+					</div>
+				</div>
 
-        <!-- Footer Social Icons -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h4 class="text-uppercase mb-4">Around the Web</h4>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/alexdanson/">
-            <i class="fab fa-fw fa-linkedin-in"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/alexanderdanson">
-            <i class="fab fa-fw fa-github"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://instagram.com/alexsdanson">
-            <i class="fab fa-fw fa-instagram"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/alexsdanson">
-            <i class="fab fa-fw fa-twitter"></i>
-          </a>
-        </div>
+				<!-- App Content -->
+				<div class="col-lg-6 order-lg-2 order-1">
+					<div class="app_content d-flex flex-column align-items-start justify-content-center">
+						<div class="section_title"><h1>Get Your Music Right Now!</h1></div>
+						<div class="app_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec faucibus velit. Quisque eleifend orci ipsum, a bibendum lacus suscipit sit amet</p>
+						</div>
+						<div class="stores d-flex flex-row align-items-start justify-content-start flex-wrap">
+							<div class="store"><a href="#"><img src="static/img/music/appstore.png" alt=""></a></div>
+							<div class="store"><a href="#"><img src="static/img/music/googleplay.png" alt=""></a></div>
+						</div>
+					</div>
+				</div>
 
-        <!-- Footer About Text -->
-        <div class="col-lg-4">
-          <h4 class="text-uppercase mb-4">About Alexander</h4>
-          <p class="lead mb-0">Alex is a consultant with expertise in agile processes, specialising in digital commerce and fintech
-          </p>
-        </div>
+			</div>
+		</div>
+	</div>
 
-      </div>
-    </div>
-  </footer>
+	<!-- Featured -->
 
-  <!-- Copyright Section -->
-  <section class="copyright py-4 text-center text-white">
-    <div class="container">
-      <small>Copyright &copy; Alexander Danson 2020</small>
-    </div>
-  </section>
+	<div class="featured">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center"><h1>Featured Albums</h1></div>
+					<div class="featured_list">
+						<div id="jplayer_2" class="jp-jplayer"></div>
+						<div id="jp_container_2" class="jp-audio" role="application" aria-label="media player">
+							<div class="jp-type-playlist">
+								<div class="jp-playlist">
+									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+										<li></li>
+									</ul>
+								</div>
+								<div class="jp-no-solution">
+									<span>Update Required</span>
+									To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-  <div class="scroll-to-top d-lg-none position-fixed ">
-    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-      <i class="fa fa-chevron-up"></i>
-    </a>
-  </div>
+	<!-- News -->
 
-  <!-- Portfolio Modals -->
+	<div class="news">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title"><h1>Latest News</h1></div>
+				</div>
+			</div>
+			<div class="row news_row">
+				
+				<!-- News Post -->
+				<div class="col-xl-4 col-md-6">
+					<div class="news_post image_top">
+						<div class="news_post_image"><img src="static/img/music/news_1.jpg" alt=""></div>
+						<div class="news_post_content">
+							<div class="news_post_date"><a href="#">Oct 19, 2018</a></div>
+							<div class="news_post_title"><a href="#">Music Seminary at Festival</a></div>
+							<div class="news_post_text">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-  <!-- Portfolio Modal 1 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Business Consultant, Centigo</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="static/img/portfolio/cabin.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">I've worked as a consultant for Centigo since 2016, delivering in agile projects within banking, Fintech and retail. Centigo is a Swedish management consultancy founded in 2002 with offices in Stockholm, Malmö, Oslo and London. <a href="https://www.centigo.se">Click here to find out more about Centigo</a>. </p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+				<!-- News Post -->
+				<div class="col-xl-4 col-md-6">
+					<div class="news_post image_bottom d-flex flex-column align-items-start justify-content-start">
+						<div class="news_post_content order-md-1 order-2">
+							<div class="news_post_date"><a href="#">Oct 19, 2018</a></div>
+							<div class="news_post_title"><a href="#">Festival list for 2019</a></div>
+							<div class="news_post_text">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.</p>
+							</div>
+						</div>
+						<div class="news_post_image order-md-2 order-1"><img src="static/img/music/news_2.jpg" alt=""></div>
+					</div>
+				</div>
 
-  <!-- Portfolio Modal 2 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Clearwater Music School</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="static/img/portfolio/game.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">I founded <a href="https://clearwatermusic.co.uk">Clearwater Music School</a> in 2012. Clearwater offers private instrumental music lessons in Guitar, Singing, Piano and Keyboard and is based in Lancashire, England.</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+				<!-- News Post -->
+				<div class="col-xl-4 col-md-6">
+					<div class="news_post image_top">
+						<div class="news_post_image"><img src="static/img/music/news_3.jpg" alt=""></div>
+						<div class="news_post_content">
+							<div class="news_post_date"><a href="#">Oct 19, 2018</a></div>
+							<div class="news_post_title"><a href="#">New album release in 2019</a></div>
+							<div class="news_post_text">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-  <!-- Portfolio Modal 3 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Coding</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="static/img/portfolio/submarine.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">As a technology enthusiast I have a big interest in code. So when not delivering in client projects, or making music, I'll probably be building something (like this website, built using Flask) or learning more about the endless possibilities of programming. <a href="https://github.com/alexanderdanson">See my Github here</a>.</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+			</div>
+		</div>
+	</div>
 
-  <!-- New Portfolio Modal 
-  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8"> -->
-                <!-- Portfolio Modal - Title 
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>-->
-                <!-- Icon Divider 
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div> -->
-                <!-- Portfolio Modal - Image 
-                <img class="img-fluid rounded mb-5" src="static/img/portfolio/game.png" alt=""> -->
-                <!-- Portfolio Modal - Text 
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
+	<!-- Newsletter -->
 
-  {% endblock %}
+	<div class="newsletter">
+		<div class="container">
+			<div class="row">
 
-  {% block scripts %}
-  {{ super() }}
+				<!-- Newsletter Content -->
+				<div class="col-xl-6">
+					<div class="newsletter_content">
+						<div class="section_title"><h1>Subscribe & Follow</h1></div>
+						<div class="newsletter_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac porttitor scelerisque.</p>
+						</div>
+					</div>
+				</div>
 
-  <script src="static/js/jquery.easing.js"></script>
+				<!-- Newsletter Form -->
+				<div class="col-xl-6 nl_col">
+					<div class="newsletter_form_container d-flex flex-column align-items-start justify-content-end">
+						<form action="#" class="newsletter_form" id="newsletter_form">
+							<div class="d-flex flex-row align-items-start justify-content-between">
+								<input type="email" class="newsletter_input" placeholder="Your E-mail" required="required">
+								<button class="button newsletter_button"><span>subscribe</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
 
-  <!-- Custom scripts for this template -->
+			</div>
+		</div>
+	</div>
 
-  <script src="static/js/main.js"></script>
-  {% endblock %}
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="background_image" style="background-image:url(static/img/music/footer.jpg)"></div>
+		<div class="footer_content">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+
+						<!-- Logo -->
+						<div class="logo">
+							<a href="#" class="d-flex flex-row align-items-end justify-content-start">
+								<span class="logo_bars d-flex flex-row align-items-end justify-content-between"><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="logo_text">music</span>
+							</a>
+						</div>
+
+						<!-- Footer Social -->
+						<div class="footer_social">
+							<ul class="d-flex flex-row align-items-center justify-content-center">
+								<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer_bar">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+	</footer>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/plugins/greensock/TweenMax.min.js"></script>
+<script src="static/js/plugins/greensock/TimelineMax.min.js"></script>
+<script src="static/js/plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="static/js/plugins/greensock/animation.gsap.min.js"></script>
+<script src="static/js/plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="static/js/plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
+<script src="static/js/plugins/jPlayer/jquery.jplayer.min.js"></script>
+<script src="static/js/plugins/jPlayer/jplayer.playlist.min.js"></script>
+<script src="static/js/plugins/easing/easing.js"></script>
+<script src="static/js/plugins/progressbar/progressbar.min.js"></script>
+<script src="static/js/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="static/js/plugins/scrollTo/jquery.scrollTo.min.js"></script>
+<script src="static/js/custom.js"></script>
+
+{% endblock %}
 </body>
-
 </html>
