@@ -26,7 +26,7 @@ def music():
         phone = form.phone.data
         contact_me_email(from_name=from_name, sender=sender, message_body=message_body, phone=phone)
         flash("Thanks for your email, I'll get back to you as soon as I can!")
-    return render_template('music.html', form=form)
+    return render_template('music_index.html', form=form)
 
 @bp.route('/test')
 def test():
