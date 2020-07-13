@@ -227,9 +227,9 @@ $(document).ready(function()
 			$("#jplayer_1").jPlayer({
 				ready: function () {
 					$(this).jPlayer("setMedia", {
-						title:"Better Days",
-							artist:"Bensound",
-							mp3:"files/bensound-betterdays.mp3"
+						title:"All Along the Watchtower",
+							artist:"Alex Danson",
+							mp3:"static/files/music/all-along-the-watchtower.wav"
 					});
 				},
 				play: function() { // To avoid multiple jPlayers playing together.
