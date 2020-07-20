@@ -8,3 +8,7 @@ class ContactForm(FlaskForm):
     phone = IntegerField('Phone')
     message = TextAreaField('Message', validators=[DataRequired()])
     submit = SubmitField('Send')
+
+class NewsletterSubscribe(FlaskForm):
+    email = StringField('E-Mail', validators=[Email(), DataRequired()])
+    submit = SubmitField('SUBSCRIBE')

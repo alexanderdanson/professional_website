@@ -125,6 +125,11 @@ p::selection
 {
 	
 }
+
+.home_subtitle {
+	color: #ffffff !important;
+	font-size: 45px !important;
+}
 h1{font-size: 48px;}
 h2{font-size: 36px;}
 h3{font-size: 24px;}
@@ -733,12 +738,13 @@ section
 	display: block;
 	position: absolute;
 	top: 0;
-	right: -72px;
+	margin-top: 20px;
+	left: -72px;
 	width: 90px;
 	height: 90px;
 	border-radius: 50%;
 	background: #e830fe;
-	content: 'live';
+	content: 'Music by';
 	line-height: 95px;
 	font-size: 16px;
 	font-weight: 700;
@@ -909,6 +915,7 @@ section
 	-ms-transition: all 200ms ease;
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
+	opacity: 0;
 }
 .home_slider_nav i
 {
@@ -1595,6 +1602,7 @@ section
 	color: rgba(255,255,255,0.53);
 	outline: none;
 }
+
 .featured_list .jp-playlist > ul > li > div:first-of-type a:hover
 {
 	color: #2e9e7a;
@@ -1727,15 +1735,25 @@ section
 
 .newsletter
 {
-	background: #ffffff;
+	background: rgb(36,87,215, 0.4);
 	padding-top: 77px;
 	padding-bottom: 67px;
 }
-.newsletter_text
+.newsletter_text_holder
 {
 	margin-top: -12px;
 	padding-left: 2px;
 }
+
+.newsletter_text {
+	color: #FFFFFF;
+}
+
+.subscribe_text 
+{
+	color: #FFFFFF;
+}
+
 .newsletter_form_container
 {
 	padding-left: 40px;

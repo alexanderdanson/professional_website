@@ -17,3 +17,10 @@ def contact_me_email(from_name, sender, message_body, phone):
                                          sender=sender, from_name=from_name),
                html_body=render_template('email/contact.html', message_body=message_body, phone=phone,
                                          sender=sender, from_name=from_name))
+
+def new_subscriber_email(subscriber):
+    send_email('[AlexanderDanson.com/musc] New Subscriber!',
+               sender="newsubscriber@alexanderdanson.com",
+               recipients=[app.config['ADMINS'][0]],
+               text_body=render_template('email/subscriber.txt', subscriber=subscriber),
+               html_body=render_template('email/subscriber.html', subscriber=subscriber))

@@ -229,7 +229,7 @@ $(document).ready(function()
 					$(this).jPlayer("setMedia", {
 						title:"All Along the Watchtower",
 							artist:"Alex Danson",
-							mp3:"static/files/music/all-along-the-watchtower.wav"
+							mp3:"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/848020729&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
 					});
 				},
 				play: function() { // To avoid multiple jPlayers playing together.

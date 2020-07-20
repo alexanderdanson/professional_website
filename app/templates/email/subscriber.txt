@@ -1,0 +1,5 @@
+Dear Alex,
+
+You have received a new subscriber to be added to the mailing list!
+
+Email Address: {{ subscriber }}

@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	{% extends "music_base.html" %}
+{% extends "music_base.html" %}
 
-	{% block title %}
-	{% endblock %}
-	{% block page_content %}
+{% block title %}
+{% endblock %}
+{% block page_content %}
 
 
-	<!-- Home -->
+<!-- Home -->
 
-	<div class="home">
+<div class="home">
 
-		<!-- Home Slider -->
-		<div class="home_slider_container">
-			<div class="owl-carousel owl-theme home_slider">
+	<!-- Home Slider -->
+	<div class="home_slider_container">
+		<div class="owl-carousel owl-theme home_slider">
 
-				<!-- Slide -->
-				<div class="slide">
-					<div class="background_image" style="background-image:url(static/img/music/index.jpg)"></div>
-					<div class="home_container">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_content">
-										<div class="home_title_container text-center">
-											<div class="home_title islive text-center">
-												<h1>your <span>Music.</span></h1>
-											</div>
+			<!-- Slide -->
+			<div class="slide">
+				<div class="background_image" style="background-image:url(static/img/music/index.jpg)"></div>
+				<div class="home_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="home_content">
+									<div class="home_title_container text-center">
+										<div class="home_title islive text-center">
+											<h1><span> Alex Danson.</span></h1>
 										</div>
-										<div class="tickets_form_container">
-											<form action="#" class="tickets_form">
-												<div
-													class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">
-													<div
-														class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">
-														<div class="custom_dropdown tickets_form_input cdd">
-															<div class="custom_dropdown_selected cdd">Event</div>
-															<ul class="cdd">
-																<li>Event 1</li>
-																<li>Event 2</li>
-																<li>Event 3</li>
-															</ul>
+									</div>
+
+									<!-- Newletter -->
+									<div class="newsletter">
+										<div class="container">
+											<div class="row">
+									
+												<!-- Newsletter Content -->
+												<div class="col-xl-6">
+													<div class="newsletter_content">
+														<div class="section_title">
+															<h1 class="subscribe_text">Subscribe & Follow</h1>
 														</div>
-														<input type="text" class="tickets_form_input"
-															placeholder="Tickets" required="required">
+														<div class="newsletter_text_holder">
+															<p class="newsletter_text">Enter your email address below to be the first to hear about new music!</p>
+														</div>
 													</div>
-													<button class="tickets_form_button button"><span>get your
-															tickets</span></button>
 												</div>
-											</form>
+									
+												<!-- Newsletter Form -->
+												<div class="col-xl-6 nl_col">
+													<div class="newsletter_form_container d-flex flex-column align-items-start justify-content-end">
+														<form id="newsletter_form" class="newsletter_form" action="" method="post">
+															<div class="d-flex flex-row align-items-start justify-content-between"></div>
+															{{ wtf.quick_form(form) }}
+															<!-- {{ form.email(class="newsletter_input", placeholder="Your E-mail") }}
+															{{ form.submit(class="button newsletter_button") }} -->
+															</div>
+														  </form>
+														  <br>
+														  {% with messages = get_flashed_messages() %}
+															{% if messages %}
+															  {% for message in messages %}
+																<div class="alert alert-info" role="alert">{{ message }}</div>
+															  {% endfor %}
+															{% endif %}
+														  {% endwith %}
+													</div>
+												</div>
+									
+											</div>
 										</div>
 									</div>
 								</div>
@@ -57,462 +76,439 @@
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<!-- Slide -->
-				<div class="slide">
-					<div class="background_image" style="background-image:url(static/img/music/index.jpg)"></div>
-					<div class="home_container">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_content">
-										<div class="home_title_container text-center">
-											<div class="home_title islive text-center">
-												<h1>your <span>music.</span></h1>
-											</div>
+			<!-- Slide 
+			<div class="slide">
+				<div class="background_image" style="background-image:url(static/img/music/index.jpg)"></div>
+				<div class="home_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="home_content">
+									<div class="home_title_container text-center">
+										<div class="home_title islive text-center">
+											<h1>your <span>music.</span></h1>
 										</div>
-										<div class="tickets_form_container">
-											<form action="#" class="tickets_form">
+									</div>
+									<div class="tickets_form_container">
+										<form action="#" class="tickets_form">
+											<div
+												class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">
 												<div
-													class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">
-													<div
-														class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">
-														<div class="custom_dropdown tickets_form_input cdd">
-															<div class="custom_dropdown_selected cdd">Event</div>
-															<ul class="cdd">
-																<li>Event 1</li>
-																<li>Event 2</li>
-																<li>Event 3</li>
-															</ul>
-														</div>
-														<input type="text" class="tickets_form_input"
-															placeholder="Tickets" required="required">
+													class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">
+													<div class="custom_dropdown tickets_form_input cdd">
+														<div class="custom_dropdown_selected cdd">Event</div>
+														<ul class="cdd">
+															<li>Event 1</li>
+															<li>Event 2</li>
+															<li>Event 3</li>
+														</ul>
 													</div>
-													<button class="tickets_form_button button"><span>get your
-															tickets</span></button>
+													<input type="text" class="tickets_form_input" placeholder="Tickets"
+														required="required">
 												</div>
-											</form>
-										</div>
+												<button class="tickets_form_button button"><span>get your
+														tickets</span></button>
+											</div>
+										</form>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div> -->
 
-				<!-- Slide -->
-				<div class="slide">
-					<div class="background_image" style="background-image:url(static/img/music/index.jpg)"></div>
-					<div class="home_container">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_content">
-										<div class="home_title_container text-center">
-											<div class="home_title islive text-center">
-												<h1>your <span>music.</span></h1>
-											</div>
+			<!-- Slide 
+			<div class="slide">
+				<div class="background_image" style="background-image:url(static/img/music/index.jpg)"></div>
+				<div class="home_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="home_content">
+									<div class="home_title_container text-center">
+										<div class="home_title islive text-center">
+											<h1>your <span>music.</span></h1>
 										</div>
-										<div class="tickets_form_container">
-											<form action="#" class="tickets_form">
+									</div>
+									<div class="tickets_form_container">
+										<form action="#" class="tickets_form">
+											<div
+												class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">
 												<div
-													class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">
-													<div
-														class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">
-														<div class="custom_dropdown tickets_form_input cdd">
-															<div class="custom_dropdown_selected cdd">Event</div>
-															<ul class="cdd">
-																<li>Event 1</li>
-																<li>Event 2</li>
-																<li>Event 3</li>
-															</ul>
-														</div>
-														<input type="text" class="tickets_form_input"
-															placeholder="Tickets" required="required">
+													class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">
+													<div class="custom_dropdown tickets_form_input cdd">
+														<div class="custom_dropdown_selected cdd">Event</div>
+														<ul class="cdd">
+															<li>Event 1</li>
+															<li>Event 2</li>
+															<li>Event 3</li>
+														</ul>
 													</div>
-													<button class="tickets_form_button button"><span>get your
-															tickets</span></button>
+													<input type="text" class="tickets_form_input" placeholder="Tickets"
+														required="required">
 												</div>
-											</form>
-										</div>
+												<button class="tickets_form_button button"><span>get your
+														tickets</span></button>
+											</div>
+										</form>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div> -->
 
-			</div>
+		</div> 
 
-			<!-- Home Slider Navigation -->
-			<div class="home_slider_nav"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+		<!-- Home Slider Navigation -->
+		<div class="home_slider_nav"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
 
-			<!-- Home Social -->
-			<div class="home_social">
-				<div class="d-flex flex-row align-items-center justify-content-start">
-					<div class="home_social_text">follow</div>
-					<div class="home_social_list">
-						<ul class="d-flex flex-row align-items-center justify-content-start">
-							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
+		<!-- Home Social -->
+		<div class="home_social">
+			<div class="d-flex flex-row align-items-center justify-content-start">
+				<div class="home_social_text">follow</div>
+				<div class="home_social_list">
+					<ul class="d-flex flex-row align-items-center justify-content-start">
+						<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+					</ul>
 				</div>
 			</div>
-
-			<!-- Scroll Down -->
-			<div class="scroll_down scroll_down_link" data-scroll-to=".tours">
-				<a href="#"></a>
-				<div class="d-flex flex-row align-items-center justify-content-start">
-					<div>scroll down</div>
-					<div class="scroll_arrows d-flex flex-column align-items-start justify-content-start">
-						<img src="static/img/music/arrow_down.png" alt="">
-						<img src="static/img/music/arrow_down.png" alt="">
-					</div>
-				</div>
-			</div>
-
 		</div>
+
+		<!-- Scroll Down -->
+		<div class="scroll_down scroll_down_link" data-scroll-to=".tours">
+			<a href="#"></a>
+			<div class="d-flex flex-row align-items-center justify-content-start">
+				<div>scroll down</div>
+				<div class="scroll_arrows d-flex flex-column align-items-start justify-content-start">
+					<img src="static/img/music/arrow_down.png" alt="">
+					<img src="static/img/music/arrow_down.png" alt="">
+				</div>
+			</div>
+		</div>
+
 	</div>
+</div>
 
-	<!-- Song -->
+<!-- Song 
 
-	<div class="song">
-		<div class="parallax_background parallax-window" data-parallax="scroll"
-			data-image-src="static/img/music/song.jpg" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="song_content">
-
-						<!-- Player -->
-						<div class="single_player_container">
-							<div class="single_player d-flex flex-row align-items-center justify-content-start">
-								<div id="jplayer_1" class="jp-jplayer"></div>
-								<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-									<div
-										class="jp-gui jp-interface d-flex flex-lg-row flex-column align-items-start justify-content-start">
-
-										<!-- Player Controls -->
-										<div
-											class="player_controls_box d-flex flex-row align-items-start justify-content-start">
-											<div class="order-lg-1 order-2">
-												<div class="player_title">song of the week</div>
-												<div
-													class="jp-controls-holder player_controls ml-auto d-flex flex-row align-items-start justify-content-start">
-													<button class="jp-play player_button" tabindex="0"></button>
-													<button class="jp-stop player_button" tabindex="0"></button>
-												</div>
-											</div>
-											<div class="song_image ml-lg-auto order-lg-2 order-1"><img
-													src="static/img/music/song_1.jpg" alt=""></div>
-										</div>
-
-										<!-- Progress Bar -->
-										<div
-											class="player_bars d-flex flex-row align-items-start justify-content-start">
-											<div class="player_progress_box">
-												<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
-												<div class="song_info">
-													<div class="jp-artist" aria-label="title">Alex Danson</div>
-													<div class="jp-title" aria-label="title">All along the Watchtower
-													</div>
-												</div>
-												<div class="jp-progress">
-													<div class="jp-seek-bar">
-														<div>
-															<div class="jp-play-bar"><span></span></div>
-														</div>
-													</div>
-												</div>
-												<div class="jp-duration ml-auto" role="timer" aria-label="duration">
-												</div>
-											</div>
-
-											<!-- Volume Controls -->
-											<div class="jp-volume-controls ml-lg-auto">
-												<div class="mute_button">
-													<button class="jp-mute" tabindex="0"></button>
-												</div>
-												<div class="d-flex flex-row align-items-center justify-content-start">
-													<div class="jp-volume-bar">
-														<div>
-															<div class="jp-volume-bar-value"></div>
-														</div>
-													</div>
-												</div>
+<div class="song">
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="static/img/music/song.jpg"
+		data-speed="0.8"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="song_content">
+-->
+					<!-- Player 
+					<div class="single_player_container">
+						 <div class="single_player d-flex flex-row align-items-center justify-content-start"> -->
+						<!-- 	<div id="jplayer_1" class="jp-jplayer"></div>
+							<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+								<div
+									class="jp-gui jp-interface d-flex flex-lg-row flex-column align-items-start justify-content-start">
+-->
+									<!--Player Controls -->
+									<!--<div
+										class="player_controls_box d-flex flex-row align-items-start justify-content-start">
+										<div class="order-lg-1 order-2">
+											<div class="player_title">song of the week</div>
+											<div
+												class="jp-controls-holder player_controls ml-auto d-flex flex-row align-items-start justify-content-start">
+												<button class="jp-play player_button" tabindex="0"></button>
+												<button class="jp-stop player_button" tabindex="0"></button>
 											</div>
 										</div>
-
+										<div class="song_image ml-lg-auto order-lg-2 order-1"><img
+												src="static/img/music/song_1.jpg" alt=""></div>
 									</div>
-									<div class="jp-no-solution">
-										<span>Update Required</span>
-										To play the media you will need to either update your browser to a recent
-										version or update your <a href="http://get.adobe.com/flashplayer/"
-											target="_blank">Flash plugin</a>
+-->
+									<!-- Progress Bar -->
+									<!-- <div class="player_bars d-flex flex-row align-items-start justify-content-start">
+										<div class="player_progress_box">
+											<div class="jp-current-time" role="timer" aria-label="time">00:00</div>
+											<div class="song_info">
+												<div class="jp-artist" aria-label="title">Alex Danson</div>
+												<div class="jp-title" aria-label="title">All along the Watchtower
+												</div>
+											</div>
+											<div class="jp-progress">
+												<div class="jp-seek-bar">
+													<div>
+														<div class="jp-play-bar"><span></span></div>
+													</div>
+												</div>
+											</div>
+											<div class="jp-duration ml-auto" role="timer" aria-label="duration">
+											</div>
+										</div>
+-->
+										<!-- Volume Controls -->
+									<!-- 	<div class="jp-volume-controls ml-lg-auto">
+											<div class="mute_button">
+												<button class="jp-mute" tabindex="0"></button>
+											</div>
+											<div class="d-flex flex-row align-items-center justify-content-start">
+												<div class="jp-volume-bar">
+													<div>
+														<div class="jp-volume-bar-value"></div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
+								
 								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Tours -->
-
-	<div class="tours">
-		<div class="container">
-			<div class="row row-lg-eq-height">
-
-				<!-- Add -->
-				<div class="col-lg-4 order-lg-1 order-2 tours_col">
-					<div class="extra d-flex flex-column align-items-center justify-content-between">
-						<div class="background_image" style="background-image:url(static/img/music/extra_1.jpg)"></div>
-						<div class="extra_frame"></div>
-						<div class="extra_text">it's awesome</div>
-						<div class="extra_title_container">
-							<div class="extra_year">2019</div>
-							<div class="extra_title">world tour</div>
-							<div class="extra_subtitle">november 2018</div>
-						</div>
-						<div class="button extra_button"><a href="#">get your tickets</a></div>
-					</div>
-				</div>
-
-				<!-- Tours Content -->
-				<div class="col-lg-8 order-lg-2 order-1">
-					<div class="tours_content">
-						<div class="section_title">
-							<h1>Tour Dates</h1>
-						</div>
-						<div class="tours_list_container">
-							<ul class="tours_list">
-
-								<!-- Tour -->
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div class="tour_info">
-										<div class="tour_date">Sun, 21 Oct 2018</div>
-										<div class="tour_name"><a href="#">The O2</a></div>
-										<div class="tour_location">London, United Kingdom</div>
-									</div>
-									<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
-								</li>
-
-								<!-- Tour -->
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div class="tour_info">
-										<div class="tour_date">Mon, 22 Oct 2018</div>
-										<div class="tour_name"><a href="#">The O2</a></div>
-										<div class="tour_location">London, United Kingdom</div>
-									</div>
-									<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
-								</li>
-
-								<!-- Tour -->
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div class="tour_info">
-										<div class="tour_date">Tue, 23 Oct 2018</div>
-										<div class="tour_name"><a href="#">The O2</a></div>
-										<div class="tour_location">London, United Kingdom</div>
-									</div>
-									<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
-								</li>
-
-								<!-- Tour -->
-								<li class="d-flex flex-row align-items-start justify-content-start">
-									<div class="tour_info">
-										<div class="tour_date">Wed, 24 Oct 2018</div>
-										<div class="tour_name"><a href="#">The O2</a></div>
-										<div class="tour_location">London, United Kingdom</div>
-									</div>
-									<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
-								</li>
-
-							</ul>
-						</div>
-						<div class="tours_link"><a href="#">See All Tour Dates</a></div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- App -->
-
-	<div class="app">
-		<div class="container">
-			<div class="row row-lg-eq-height">
-
-				<!-- App Image -->
-				<div class="col-lg-6 order-lg-1 order-2 app_col">
-					<div class="app_image">
-						<img src="static/img/music/app.jpg" alt="">
-					</div>
-				</div>
-
-				<!-- App Content -->
-				<div class="col-lg-6 order-lg-2 order-1">
-					<div class="app_content d-flex flex-column align-items-start justify-content-center">
-						<div class="section_title">
-							<h1>Get Your Music Right Now!</h1>
-						</div>
-						<div class="app_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac
-								porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.
-								Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum
-								primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse nec
-								faucibus velit. Quisque eleifend orci ipsum, a bibendum lacus suscipit sit amet</p>
-						</div>
-						<div class="stores d-flex flex-row align-items-start justify-content-start flex-wrap">
-							<div class="store"><a href="#"><img src="static/img/music/appstore.png" alt=""></a></div>
-							<div class="store"><a href="#"><img src="static/img/music/googleplay.png" alt=""></a></div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- Featured -->
-
-	<div class="featured">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title text-center">
-						<h1>Featured Albums</h1>
-					</div>
-					<div class="featured_list">
-						<div id="jplayer_2" class="jp-jplayer"></div>
-						<div id="jp_container_2" class="jp-audio" role="application" aria-label="media player">
-							<div class="jp-type-playlist">
-								<div class="jp-playlist">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li></li>
-									</ul>
-								</div>
+-->
+								<!-- 
 								<div class="jp-no-solution">
 									<span>Update Required</span>
-									To play the media you will need to either update your browser to a recent version or
-									update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash
-										plugin</a>
+									To play the media you will need to either update your browser to a recent
+									version or update your <a href="http://get.adobe.com/flashplayer/"
+										target="_blank">Flash plugin</a>
 								</div>
 							</div>
-						</div>
+							
 					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
+</div> -->
 
-	<!-- News -->
+<!-- Tours 
 
-	<div class="news">
-		<div class="container">
-			<div class="row">
-				<div class="col">
+<div class="tours">
+	<div class="container">
+		<div class="row row-lg-eq-height">
+-->
+			<!-- Add
+			<div class="col-lg-4 order-lg-1 order-2 tours_col">
+				<div class="extra d-flex flex-column align-items-center justify-content-between">
+					<div class="background_image" style="background-image:url(static/img/music/extra_1.jpg)"></div>
+					<div class="extra_frame"></div>
+					<div class="extra_text">it's awesome</div>
+					<div class="extra_title_container">
+						<div class="extra_year">2019</div>
+						<div class="extra_title">world tour</div>
+						<div class="extra_subtitle">november 2018</div>
+					</div>
+					<div class="button extra_button"><a href="#">get your tickets</a></div>
+				</div>
+			</div>
+ -->
+			<!-- Tours Content 
+			<div class="col-lg-8 order-lg-2 order-1">
+				<div class="tours_content">
 					<div class="section_title">
-						<h1>Latest News</h1>
+						<h1>Tour Dates</h1>
+					</div>
+					<div class="tours_list_container">
+						<ul class="tours_list">
+-->
+							<!-- Tour 
+							<li class="d-flex flex-row align-items-start justify-content-start">
+								<div class="tour_info">
+									<div class="tour_date">Sun, 21 Oct 2018</div>
+									<div class="tour_name"><a href="#">The O2</a></div>
+									<div class="tour_location">London, United Kingdom</div>
+								</div>
+								<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
+							</li>
+-->
+							<!-- Tour 
+							<li class="d-flex flex-row align-items-start justify-content-start">
+								<div class="tour_info">
+									<div class="tour_date">Mon, 22 Oct 2018</div>
+									<div class="tour_name"><a href="#">The O2</a></div>
+									<div class="tour_location">London, United Kingdom</div>
+								</div>
+								<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
+							</li>
+-->
+							<!-- Tour 
+							<li class="d-flex flex-row align-items-start justify-content-start">
+								<div class="tour_info">
+									<div class="tour_date">Tue, 23 Oct 2018</div>
+									<div class="tour_name"><a href="#">The O2</a></div>
+									<div class="tour_location">London, United Kingdom</div>
+								</div>
+								<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
+							</li>
+-->
+							<!-- Tour 
+							<li class="d-flex flex-row align-items-start justify-content-start">
+								<div class="tour_info">
+									<div class="tour_date">Wed, 24 Oct 2018</div>
+									<div class="tour_name"><a href="#">The O2</a></div>
+									<div class="tour_location">London, United Kingdom</div>
+								</div>
+								<div class="button tour_button ml-auto"><a href="#">get your tickets</a></div>
+							</li>
+
+						</ul>
+					</div>
+					<div class="tours_link"><a href="#">See All Tour Dates</a></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div> -->
+
+<!-- App -->
+
+<div class="app">
+	<div class="container">
+		<div class="row row-lg-eq-height">
+
+			<!-- App Image -->
+			<div class="col-lg-6 order-lg-1 order-2 app_col">
+				<div class="app_image">
+					<img src="static/img/music/app.jpg" alt="">
+				</div>
+			</div>
+
+			<!-- App Content -->
+			<div class="col-lg-6 order-lg-2 order-1">
+				<div class="app_content d-flex flex-column align-items-start justify-content-center">
+					<div class="section_title">
+						<h1>Songwriter and Guitarist.</h1>
+					</div>
+					<div class="app_text">
+						<p>I write and perform my own music as a solo artist, but have played in various bands over the years. My music is heavily influenced by legendary blues guitarists, I'm a guitar nerd at heart and love to hear the instrument played in its purest form. As a one-man-band however, I like to add an electronic twist to give a fresh and original edge to my music, the main goal being listenability!<br><br>
+						As well as performing my own music, I am also available for sessions and contracts, for example, I can produce backing tracks for singers, or provide guitar services for recording or performances. 
+						</p>
+					</div>
+					<div class="stores d-flex flex-row align-items-start justify-content-start flex-wrap">
+						<div class="store"><a href="#"><img src="static/img/music/appstore.png" alt=""></a></div>
+						<div class="store"><a href="#"><img src="static/img/music/googleplay.png" alt=""></a></div>
 					</div>
 				</div>
 			</div>
-			<div class="row news_row">
 
-				<!-- News Post -->
-				<div class="col-xl-4 col-md-6">
-					<div class="news_post image_top">
-						<div class="news_post_image"><img src="static/img/music/news_1.jpg" alt=""></div>
-						<div class="news_post_content">
-							<div class="news_post_date"><a href="#">Oct 19, 2018</a></div>
-							<div class="news_post_title"><a href="#">Music Seminary at Festival</a></div>
-							<div class="news_post_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac
-									porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.
-								</p>
+		</div>
+	</div>
+</div>
+
+<!-- Featured Videos -->
+<!-- 
+				<div class="featured_list">
+					<div id="jplayer_2" class="jp-jplayer"></div>
+					<div id="jp_container_2" class="jp-audio" role="application" aria-label="media player">
+						<div class="jp-type-playlist">
+							<div class="jp-playlist">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li></li>
+								</ul>
+							</div>
+							<div class="jp-no-solution">
+								<span>Update Required</span>
+								To play the media you will need to either update your browser to a recent version or
+								update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash
+									plugin</a>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<!-- News Post -->
-				<div class="col-xl-4 col-md-6">
-					<div class="news_post image_bottom d-flex flex-column align-items-start justify-content-start">
-						<div class="news_post_content order-md-1 order-2">
-							<div class="news_post_date"><a href="#">Oct 19, 2018</a></div>
-							<div class="news_post_title"><a href="#">Festival list for 2019</a></div>
-							<div class="news_post_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac
-									porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.
-								</p>
-							</div>
-						</div>
-						<div class="news_post_image order-md-2 order-1"><img src="static/img/music/news_2.jpg" alt="">
-						</div>
-					</div>
-				</div>
-
-				<!-- News Post -->
-				<div class="col-xl-4 col-md-6">
-					<div class="news_post image_top">
-						<div class="news_post_image"><img src="static/img/music/news_3.jpg" alt=""></div>
-						<div class="news_post_content">
-							<div class="news_post_date"><a href="#">Oct 19, 2018</a></div>
-							<div class="news_post_title"><a href="#">New album release in 2019</a></div>
-							<div class="news_post_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac
-									porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
+				</div> -->
+<div class="featured">
+	<div class="container">
+		<div class="section_title text-center">
+			<h1>Featured Videos</h1>
+		</div>
+		<div class="row">
+			<div class="col">
+				<iframe width="500" height="315" src="https://www.youtube.com/embed/QZI9R1RGgvM" frameborder="3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="col">
+				<iframe width="500" height="315" src="https://www.youtube.com/embed/gRbNfchYD4A" frameborder="3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<iframe width="500" height="315" src="https://www.youtube.com/embed/c1Zz-UTG-xA" frameborder="3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="col">
+				<iframe width="500" height="315" src="https://www.youtube.com/embed/dkJI1SVyulA" frameborder="3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<!-- Newsletter -->
+<!-- News -->
 
-	<div class="newsletter">
-		<div class="container">
-			<div class="row">
+<div class="news">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="section_title">
+					<h1>Latest News</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row news_row">
 
-				<!-- Newsletter Content -->
-				<div class="col-xl-6">
-					<div class="newsletter_content">
-						<div class="section_title">
-							<h1>Subscribe & Follow</h1>
-						</div>
-						<div class="newsletter_text">
+			<!-- News Post -->
+			<div class="col-xl-4 col-md-6">
+				<div class="news_post image_top">
+					<div class="news_post_image"><img src="static/img/music/news_1.jpg" alt=""></div>
+					<div class="news_post_content">
+						<div class="news_post_date"><a href="#">Jul 21, 2020</a></div>
+						<div class="news_post_title"><a href="#">New Single Coming Soon!</a></div>
+						<div class="news_post_text">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac
-								porttitor scelerisque.</p>
+								porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.
+							</p>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<!-- Newsletter Form -->
-				<div class="col-xl-6 nl_col">
-					<div class="newsletter_form_container d-flex flex-column align-items-start justify-content-end">
-						<form action="#" class="newsletter_form" id="newsletter_form">
-							<div class="d-flex flex-row align-items-start justify-content-between">
-								<input type="email" class="newsletter_input" placeholder="Your E-mail"
-									required="required">
-								<button class="button newsletter_button"><span>subscribe</span></button>
-							</div>
-						</form>
+			<!-- News Post -->
+			<div class="col-xl-4 col-md-6">
+				<div class="news_post image_bottom d-flex flex-column align-items-start justify-content-start">
+					<div class="news_post_content order-md-1 order-2">
+						<div class="news_post_date"><a href="#">Oct 19, 2018</a></div>
+						<div class="news_post_title"><a href="#">Festival list for 2019</a></div>
+						<div class="news_post_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac
+								porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.
+							</p>
+						</div>
+					</div>
+					<div class="news_post_image order-md-2 order-1"><img src="static/img/music/news_2.jpg" alt="">
 					</div>
 				</div>
-
 			</div>
+
+			<!-- News Post -->
+			<div class="col-xl-4 col-md-6">
+				<div class="news_post image_top">
+					<div class="news_post_image"><img src="static/img/music/news_3.jpg" alt=""></div>
+					<div class="news_post_content">
+						<div class="news_post_date"><a href="#">Oct 19, 2018</a></div>
+						<div class="news_post_title"><a href="#">New album release in 2019</a></div>
+						<div class="news_post_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum, neque ac
+								porttitor scelerisque, nisi nisl tincidunt enim, non aliquet diam neque sed urna.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
+</div>
 
-	{% endblock %}
+<!-- Newsletter -->
+
+{% endblock %}
