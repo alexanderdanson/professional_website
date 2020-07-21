@@ -549,7 +549,7 @@ section
 .hamburger
 {
 	display: none !important;
-	margin-left: 25px;
+	margin-left: 260px;
 	width: 34px;
 	height: 16px;
 	padding: 2px;
@@ -733,7 +733,7 @@ section
 	position: relative;
 	padding-top: 81px;
 }
-.home_title.islive::after
+/* .home_title.islive::after
 {
 	display: block;
 	position: absolute;
@@ -750,7 +750,7 @@ section
 	font-weight: 700;
 	color: #ffffff;
 	text-transform: uppercase;
-}
+} */
 .home_title h1
 {
 	font-size: 110px;
