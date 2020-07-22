@@ -9,14 +9,14 @@ def send_email(subject, sender, recipients, text_body, html_body):
     msg.html = html_body
     mail.send(msg)
 
-def contact_me_email(from_name, sender, message_body, phone):
+def contact_me_email(from_name, email, message_body, phone):
     send_email('[AlexanderDanson.com] New Message From {}'.format(from_name),
-               sender=sender,
+               sender="alex@clearwatermusic.co.uk",
                recipients=[app.config['ADMINS'][0]],
                text_body=render_template('email/contact.txt', message_body=message_body, phone=phone,
-                                         sender=sender, from_name=from_name),
+                                         email=email, from_name=from_name),
                html_body=render_template('email/contact.html', message_body=message_body, phone=phone,
-                                         sender=sender, from_name=from_name))
+                                         email=email, from_name=from_name))
 
 def new_subscriber_email(subscriber):
     send_email('[AlexanderDanson.com/music] New Subscriber!',
