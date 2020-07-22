@@ -19,8 +19,8 @@ def contact_me_email(from_name, sender, message_body, phone):
                                          sender=sender, from_name=from_name))
 
 def new_subscriber_email(subscriber):
-    send_email('[AlexanderDanson.com/musc] New Subscriber!',
-               sender="newsubscriber@alexanderdanson.com",
+    send_email('[AlexanderDanson.com/music] New Subscriber!',
+               sender="alex@clearwatermusic.co.uk",
                recipients=[app.config['ADMINS'][0]],
                text_body=render_template('email/subscriber.txt', subscriber=subscriber),
                html_body=render_template('email/subscriber.html', subscriber=subscriber))
